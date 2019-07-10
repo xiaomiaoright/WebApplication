@@ -6,7 +6,8 @@
 
 // if incorrect: let the user know
 
-var number = 4;
+//var number = 4;
+var number = Math.floor(Math.random() * 100);
 var guess;
 var limit = 2;
 var won = false;
@@ -36,7 +37,7 @@ for (i = 1; i <= limit; i++) {
 }
 
 if(!won){
-    document.write("Sorry, you ran out of tries. \n Game over.");
+    document.write("Sorry, you ran out of tries. \n Game over. \n The answer is: " + number);
 }
 
 function isPreviousGuess(){
