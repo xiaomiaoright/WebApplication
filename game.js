@@ -14,8 +14,10 @@ var won = false;
 var guesses = [];
 
 for (i = 1; i <= limit; i++) {
-    // prompt user for their guess 
-    guess = prompt("Guess a number");
+    // prompt user for their guess
+    do{
+        guess = parseInt(prompt("Guess a number"));
+    } while(isNaN(guess) || isPreviousGuess(guess));
 
     if(isPreviousGuess()){
         alert("You have tried this number!");
