@@ -8,13 +8,17 @@
 
 var number = 4;
 var guess;
-var limit = 5;
+var limit = 2;
 var won = false;
 var guesses = [];
 
 for (i = 1; i <= limit; i++) {
     // prompt user for their guess 
     guess = prompt("Guess a number");
+
+    if(isPreviousGuess()){
+        alert("You have tried this number!");
+    }
 
     // if correct: let the user know they won
     if(guess == number){
@@ -33,4 +37,14 @@ for (i = 1; i <= limit; i++) {
 
 if(!won){
     document.write("Sorry, you ran out of tries. \n Game over.");
+}
+
+function isPreviousGuess(){
+
+    for(i = 0; i < guesses.length; i++){
+        if(guesses[i] == guess){
+            return true;
+        }
+    }
+    return false;
 }
